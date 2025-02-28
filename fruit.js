@@ -70,3 +70,30 @@ for (let i = 0; i < evenFruitItems.length; i++) {
   evenFruitItems[i].style.backgroundColor = "brown";
   evenFruitItems[i].style.color = "white";
 }
+
+// ----------------Creating Elements & DOM Relations-------------------
+
+//createElement
+const subHeading = document.createElement("h3");
+//createTextNode
+const subHeadingContent = document.createTextNode(
+  "Buy high quality organic fruits online"
+);
+//appendChild
+const currentSubHeading = subHeading.appendChild(subHeadingContent);
+subHeading.style.fontStyle = "italic";
+const header = document.querySelector("#header");
+header.appendChild(subHeading);
+
+const divs = document.querySelectorAll("div");
+const secondDiv = divs[1];
+//createElement
+const totalFruitPara = document.createElement("p");
+//createTextNode
+const totalFruitContent = document.createTextNode("Total fruits: 4");
+//appendChild
+let totalFruit = totalFruitPara.appendChild(totalFruitContent);
+const ul = document.querySelector(".fruits");
+//insertBefore
+totalFruit = secondDiv.insertBefore(totalFruitPara, ul);
+totalFruit.setAttribute("id", "fruits-total");
